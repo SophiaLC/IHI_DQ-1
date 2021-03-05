@@ -140,8 +140,9 @@ write_reports <- function(username, password, table, mft, start, end, directory=
                                           Value=c(paste("From", vmin, "to", vmax),
                                                   paste("From", amin, "to", amax),
                                                   nrow(filter(data, C_Facility_ID==i)), 
-                                                  n_groups(group_by(filter(data, C_Facility_ID==i), C_Visit_ID))))) %>% 
-                     right_join(hl7_values, ., by="Field")), # get hl7 values
+                                                  n_groups(group_by(filter(data, C_Facility_ID==i), C_Visit_ID))))) #%>% 
+                     #right_join(hl7_values, ., by="Field")
+                                   ), # get hl7 values
                    firstColumn=TRUE, bandedRows=TRUE)
     setColWidths(wb, sheet1, 1:3, "auto")
     # sheet 2: required nulls
