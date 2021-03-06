@@ -116,8 +116,8 @@ write_reports <- function(username, password, table, mft, start, end, directory=
     amin <- min(as.character(filter(data, C_Facility_ID==i)$Date_Entry_Added))
     amax <- max(as.character(filter(data, C_Facility_ID==i)$Date_Entry_Added))
     # get hl7 values
-    data("hl7_values", envir=environment())
-    hl7_values$Field <- as.character(hl7_values$Field)
+    #data("hl7_values", envir=environment())
+    #hl7_values$Field <- as.character(hl7_values$Field)
     # get name of facility
     fname <- as.character(unlist(unname(c(fnames[which(fnames$Facility==i),1]))))
 
